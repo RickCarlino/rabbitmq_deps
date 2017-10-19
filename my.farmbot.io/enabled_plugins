@@ -1,5 +1,6 @@
 [
   rabbitmq_management,
+  rabbitmq_mqtt,
   rabbitmq_web_mqtt,
   rabbit_auth_backend_jwt
 ].
