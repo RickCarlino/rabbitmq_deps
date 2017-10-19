@@ -41,7 +41,7 @@ cat /usr/lib/erlang/releases/19/OTP_VERSION
 wget https://github.com/rabbitmq/rabbitmq-server/releases/download/rabbitmq_v3_6_12/rabbitmq-server_3.6.12-1_all.deb
 dpkg -i rabbitmq-server_3.6.12-1_all.deb
 
-# Seems to happen randomly after some installs
+# Something is wrong with one of the *.deb files. This fixes.
 apt --fix-broken install
 
 # Did it install?
@@ -60,13 +60,9 @@ rabbitmqctl add_vhost vbzcxsqr
 # Load configs
 cd /etc/rabbitmq/
 wget https://raw.githubusercontent.com/RickCarlino/rabbitmq_deps/master/my.farmbot.io/enabled_plugins
-touch rabbitmq.config
-# I like good editors when I SSH:
-snap install micro --classic
-# Copy/past the config at the top of the file:
-micro rabbitmq.config
+wget https://raw.githubusercontent.com/RickCarlino/rabbitmq_deps/master/my.farmbot.io/rabbitmq.config
 
-# Clear out logs
+# Clear out logs so it's easier to read after the reboot.
 truncate -s 0 /var/log/rabbitmq/rabbit@vultr.log
 
 # Restart and try things out.
