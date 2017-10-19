@@ -37,7 +37,7 @@ rabbitmqctl add_vhost vbzcxsqr
 # Load configs
 cd /etc/rabbitmq/
 wget https://raw.githubusercontent.com/RickCarlino/rabbitmq_deps/master/my.farmbot.io/enabled_plugins
-wget https://raw.githubusercontent.com/RickCarlino/rabbitmq_deps/master/my.farmbot.io/rabbitmq.config
+wget https://raw.githubusercontent.com/RickCarlino/rabbitmq_deps/use_prod_plugins_on_staging/my.farmbot.io/rabbitmq.config
 
 
 # Turn on the firehose
