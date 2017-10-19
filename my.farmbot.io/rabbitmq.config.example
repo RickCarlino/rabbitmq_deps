@@ -1,0 +1,21 @@
+[
+  {
+    rabbit, [
+      { loopback_users, [] },
+      { tcp_listeners, [5672] },
+      { ssl_listeners, [ ] },
+      { hipe_compile, false },
+      {
+        auth_backends, [
+          rabbit_auth_backend_internal,
+          rabbit_auth_backend_jwt
+        ]}
+    ]
+  },
+  { rabbitmq_mqtt, [{vhost, <<"vbzcxsqr">>}] },
+  { rabbitmq_web_mqtt, [{ port, 3002 }, {vhost, <<"vbzcxsqr">>}]},
+  { rabbit_auth_backend_jwt, [
+      { farmbot_api_key_url, "http://10.0.0.6:3000/api/public_key" },
+      { farmbot_vhost, <<"vbzcxsqr">>}
+    ]}
+].
