@@ -24,12 +24,12 @@ apt --fix-broken install
 # Did it install?
 cat /var/log/rabbitmq/rabbit@vultr.log # Should show logs.
 
-# Load plugins - I am going to try using the staging version on prod to see what happens.
+# Load plugins
 cd /usr/lib/rabbitmq/lib/rabbitmq_server-3.6.12/plugins/
 wget https://github.com/RickCarlino/rabbitmq_deps/raw/master/my.farmbot.io/base64url-0.0.1.ez
 wget https://github.com/RickCarlino/rabbitmq_deps/raw/master/my.farmbot.io/jsx-2.8.2.ez
 wget https://github.com/RickCarlino/rabbitmq_deps/raw/master/my.farmbot.io/jwt-0.1.3.ez
-wget https://github.com/RickCarlino/rabbitmq_deps/raw/master/my.farmbot.io/rabbit_auth_backend_jwt-0.0.2.ez
+wget https://github.com/RickCarlino/rabbitmq_deps/raw/master/my.farmbot.io/rabbit_auth_backend_jwt-0.0.1.ez
 
 # Create a VHost for MQTT users:
 rabbitmqctl add_vhost vbzcxsqr
