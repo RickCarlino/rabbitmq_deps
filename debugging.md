@@ -39,7 +39,6 @@ cd /etc/rabbitmq/
 wget https://raw.githubusercontent.com/RickCarlino/rabbitmq_deps/master/my.farmbot.io/enabled_plugins
 wget https://raw.githubusercontent.com/RickCarlino/rabbitmq_deps/use_prod_plugins_on_staging/my.farmbot.io/rabbitmq.config
 
-
 # Turn on the firehose
 rabbitmqctl trace_on -p vbzcxsqr
 # Clear out logs so it's easier to read after the reboot.
